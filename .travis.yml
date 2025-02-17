@@ -30,7 +30,7 @@ services:
 before_install:
 - sudo rm /usr/bin/mvn
 - wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz && tar -xvf apache-maven-3.9.9-bin.tar.gz
-- sudo mv ./apache-maven-3.9.9/bin/mvn /usr/local/bin 
+- sudo mv ./apache-maven-3.9.9/bin/mvn /usr/local/bin/mvn
 - mvn -version
 - curl -s https://rubygems.org/downloads/asciidoctor-2.0.17.gem -o asciidoctor-2.0.17.gem
 - gem install --local asciidoctor
