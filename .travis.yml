@@ -28,6 +28,8 @@ jobs:
 services:
 - docker
 before_install:
+- which mvn
+- which maven
 - mvn -version
 - curl -s https://rubygems.org/downloads/asciidoctor-2.0.17.gem -o asciidoctor-2.0.17.gem
 - gem install --local asciidoctor
