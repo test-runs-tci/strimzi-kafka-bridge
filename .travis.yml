@@ -8,7 +8,6 @@ jobs:
     os: linux
     arch: ppc64le
     jdk: openjdk17
-    before_script: mvn -version
     script: mvn install -Dmaven.javadoc.skip=true --add-opens java.base/java.lang=ALL-UNNAMED
     addons:
       apt:
@@ -19,8 +18,7 @@ jobs:
     os: linux
     arch: s390x
     jdk: openjdk17
-    before_script: mvn -version
-    # because of flakiness of tests on s390x, adding automatic retries on failure
+=    # because of flakiness of tests on s390x, adding automatic retries on failure
     script: mvn install -Dmaven.javadoc.skip=true -Dfailsafe.rerunFailingTestsCount=10 --add-opens java.base/java.lang=ALL-UNNAMED
     addons:
       apt:
@@ -30,6 +28,7 @@ jobs:
 services:
 - docker
 before_install:
+- mvn -version
 - curl -s https://rubygems.org/downloads/asciidoctor-2.0.17.gem -o asciidoctor-2.0.17.gem
 - gem install --local asciidoctor
 env:
