@@ -18,7 +18,7 @@ jobs:
     os: linux
     arch: s390x
     jdk: openjdk17
-=    # because of flakiness of tests on s390x, adding automatic retries on failure
+    # because of flakiness of tests on s390x, adding automatic retries on failure
     script: mvn install -Dmaven.javadoc.skip=true -Dfailsafe.rerunFailingTestsCount=10 --add-opens java.base/java.lang=ALL-UNNAMED
     addons:
       apt:
